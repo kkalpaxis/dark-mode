@@ -8,14 +8,19 @@ export const useInput = (key, initialValue) => {
     return [value, setValue, handleChanges];
 };
 
-const useLocalStorage = (key, initialValue) => {
+export const [storedValue, setStoredValue] = useState(() => {
+    const item = window.localStorage.getItem(key);
+    return item ? JSON.parse(item) : initialValue;
+});
+
+export const useLocalStorage = (key, initialValue) => {
     const [storedValue, setStoredValue] = useState(() => {
         const item = window.localStorage.getItem(key);
         return item ? JSON.parse(item) : initialValue;
     });
     const setValue = value => {
         setStoredValue(value);
-        window.localStorage.setItem(key, JSON.stringify(value));
-    };
-    return [storedValue, setValue];
-};
+        window.localStorage(value).setItem(key, JSON.stringify(value));
+    }
+    return [storedValue, setValue]
+}
