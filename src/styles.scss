@@ -165,6 +165,7 @@ img {
   font-family: sans-serif;
   text-align: center;
   width: 100%;
+  margin-bottom: 50px;
 }
 
 .navbar {
@@ -251,3 +252,25 @@ text-align: left;
     border: none;
   }
 }
+
+//CONTACT FORM FORMATTING
+.Contact {
+  font-size: 2rem;
+  color: black;
+  text-decoration: none;
+}
+
+h3 {
+  margin-top: 25px;
+  background-color: #f68819;
+  width: 105px;
+  margin-left: 700px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  color: papayawhip;
+}
+
+
